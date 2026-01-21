@@ -6,7 +6,7 @@ Componentes UI para Laravel + Livewire basados en Tailwind CSS y Alpine.js.
 
 - PHP 8.1+
 - Laravel 10+
-- Livewire 3.7+
+- Livewire 4.0+
 - Tailwind CSS 4.1+
 - Heroicons (Blade) para props `icon`
 
@@ -19,6 +19,7 @@ composer require abitae/abitae_ui
 ```
 
 Composer instalará las dependencias PHP del paquete (Livewire, Heroicons, etc.).
+Si alguna dependencia no está instalada, Composer la resolverá e instalará automáticamente durante `composer require`.
 
 2) Publicar assets/config/vistas (opcional):
 
