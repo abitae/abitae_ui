@@ -28,6 +28,16 @@ class AbitaeUiServiceProvider extends ServiceProvider
 
         Blade::componentNamespace('Abitae\\AbitaeUi\\View\\Components', 'abitae');
 
+        Blade::directive('abitaeAppearance', function () {
+            $css = config('abitae-ui.assets.css');
+            return "<link rel=\"stylesheet\" href=\"{$css}\">";
+        });
+
+        Blade::directive('abitaeScripts', function () {
+            $js = config('abitae-ui.assets.js');
+            return "<script src=\"{$js}\" defer></script>";
+        });
+
         $this->publishes([
             __DIR__ . '/../config/abitae-ui.php' => config_path('abitae-ui.php'),
         ], 'abitae-ui-config');

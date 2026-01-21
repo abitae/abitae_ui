@@ -5,12 +5,12 @@ Componentes UI para Laravel + Livewire basados en Tailwind CSS y Alpine.js.
 ## Requisitos
 
 - PHP 8.1+
-- Laravel 10+
+- Laravel 12
 - Livewire 4.0+
-- Tailwind CSS 4.1+
-- Heroicons (Blade) para props `icon`
+- Tailwind CSS 4.1+ (incluido en Laravel 12)
+- Alpine.js (incluido en Laravel 12)
 
-## Instalación
+## Instalación (Laravel 12 + Livewire 4)
 
 1) Instalar el paquete:
 
@@ -18,33 +18,40 @@ Componentes UI para Laravel + Livewire basados en Tailwind CSS y Alpine.js.
 composer require abitae/abitae_ui
 ```
 
-Composer instalará las dependencias PHP del paquete (Livewire, Heroicons, etc.).
-Si alguna dependencia no está instalada, Composer la resolverá e instalará automáticamente durante `composer require`.
+Composer instalará automáticamente las dependencias PHP (Livewire, Heroicons, etc.).
 
-2) Publicar assets/config/vistas (opcional):
+2) Publicar assets/config/vistas (opcional, recomendado si deseas editar vistas o assets):
 
 ```
 php artisan abitae-ui:install
 ```
 
-3) Agregar assets al layout:
+3) Agregar assets en tu layout:
 
 ```html
-<link rel="stylesheet" href="{{ config('abitae-ui.assets.css') }}">
-<script src="{{ config('abitae-ui.assets.js') }}" defer></script>
+<head>
+    ...
+    @abitaeAppearance
+</head>
+<body>
+    ...
+    @abitaeScripts
+</body>
 ```
 
-4) Configurar Tailwind (agregar en `resources/css/app.css`):
+4) Configurar Tailwind (Laravel 12 ya trae Tailwind por defecto):
+
+En `resources/css/app.css` agrega:
 
 ```
 @import 'tailwindcss';
 @import '../../vendor/abitae/abitae_ui/resources/css/abitae-ui.css';
 ```
 
-5) Alpine.js y plugins (recomendado para Accordion y Autocomplete):
+5) Alpine.js y plugins (Laravel 12 ya incluye Alpine; habilita plugins si los necesitas):
 
 ```
-npm install alpinejs @alpinejs/collapse @alpinejs/mask
+npm install @alpinejs/collapse @alpinejs/mask
 ```
 
 En `resources/js/app.js`:
