@@ -1,0 +1,81 @@
+avatar
+
+<flux:avatar src="https://unavatar.io/x/calebporzio" />
+<flux:avatar tooltip="Caleb Porzio" src="https://unavatar.io/x/calebporzio" />
+
+<!-- Or infer from the name prop... -->
+<flux:avatar tooltip name="Caleb Porzio" src="https://unavatar.io/x/calebporzio" />
+<flux:avatar name="Caleb Porzio" />
+<flux:avatar name="calebporzio" />
+<flux:avatar name="calebporzio" initials:single />
+
+<!-- Or use the initials prop directly... -->
+<flux:avatar initials="CP" />
+<!-- Extra large: size-16 (64px) -->
+<flux:avatar size="xl" src="https://unavatar.io/x/calebporzio" />
+
+<!-- Large: size-12 (48px) -->
+<flux:avatar size="lg" src="https://unavatar.io/x/calebporzio" />
+
+<!-- Default: size-10 (40px) -->
+<flux:avatar src="https://unavatar.io/x/calebporzio" />
+
+<!-- Small: size-8 (32px) -->
+<flux:avatar size="sm" src="https://unavatar.io/x/calebporzio" />
+
+<!-- Extra small: size-6 (24px) -->
+<flux:avatar size="xs" src="https://unavatar.io/x/calebporzio" />
+<flux:avatar icon="user" />
+<flux:avatar icon="phone" />
+<flux:avatar icon="computer-desktop" />
+<flux:avatar name="Caleb Porzio" color="red" />
+<flux:avatar name="Caleb Porzio" color="orange" />
+<flux:avatar name="Caleb Porzio" color="amber" />
+<flux:avatar name="Caleb Porzio" color="yellow" />
+<flux:avatar name="Caleb Porzio" color="lime" />
+<flux:avatar name="Caleb Porzio" color="green" />
+<flux:avatar name="Caleb Porzio" color="emerald" />
+<flux:avatar name="Caleb Porzio" color="teal" />
+<flux:avatar name="Caleb Porzio" color="cyan" />
+<flux:avatar name="Caleb Porzio" color="sky" />
+<flux:avatar name="Caleb Porzio" color="blue" />
+<flux:avatar name="Caleb Porzio" color="indigo" />
+<flux:avatar name="Caleb Porzio" color="violet" />
+<flux:avatar name="Caleb Porzio" color="purple" />
+<flux:avatar name="Caleb Porzio" color="fuchsia" />
+<flux:avatar name="Caleb Porzio" color="pink" />
+<flux:avatar name="Caleb Porzio" color="rose" />
+<flux:avatar name="Caleb Porzio" color="auto" />
+
+<!-- Use color:seed to generate a consistent color based -->
+<!-- on something unchanging like a user's ID... -->
+<flux:avatar name="Caleb Porzio" color="auto" color:seed="{{ $user->id }}" />
+<flux:avatar circle src="https://unavatar.io/x/calebporzio" />
+<flux:avatar badge badge:color="green" src="https://unavatar.io/x/calebporzio" />
+
+<flux:avatar badge badge:color="zinc" badge:position="top right" badge:circle badge:variant="outline" src="https://unavatar.io/x/calebporzio" />
+
+<flux:avatar badge="25" src="https://unavatar.io/x/calebporzio" />
+
+<flux:avatar circle badge="👍" badge:circle src="https://unavatar.io/x/calebporzio" />
+
+<flux:avatar circle src="https://unavatar.io/x/calebporzio">
+    <x-slot:badge>
+        <img class="size-3" src="https://unavatar.io/github/hugosaintemarie" />
+    </x-slot:badge>
+</flux:avatar>
+
+<flux:avatar.group>
+    <flux:avatar src="https://unavatar.io/x/calebporzio" />
+    <flux:avatar src="https://unavatar.io/github/hugosaintemarie" />
+    <flux:avatar src="https://unavatar.io/github/joshhanley" />
+    <flux:avatar>3+</flux:avatar>
+</flux:avatar.group>
+
+<!-- Adapt rings to custom background... -->
+<flux:avatar.group class="**:ring-zinc-100 dark:**:ring-zinc-800">
+    <flux:avatar circle src="https://unavatar.io/x/calebporzio" />
+    <flux:avatar circle src="https://unavatar.io/github/hugosaintemarie" />
+    <flux:avatar circle src="https://unavatar.io/github/joshhanley" />
+    <flux:avatar circle>3+</flux:avatar>
+</flux:avatar.group>
