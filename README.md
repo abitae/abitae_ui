@@ -18,7 +18,7 @@ Componentes UI para Laravel + Livewire basados en Tailwind CSS y Alpine.js.
 composer require abitae/abitae_ui
 ```
 
-Esto incluye `blade-ui-kit/blade-heroicons` para renderizar íconos con props `icon`.
+Composer instalará las dependencias PHP del paquete (Livewire, Heroicons, etc.).
 
 2) Publicar assets/config/vistas (opcional):
 
@@ -40,10 +40,10 @@ php artisan abitae-ui:install
 @import '../../vendor/abitae/abitae_ui/resources/css/abitae-ui.css';
 ```
 
-5) Alpine.js y collapse (recomendado para Accordion):
+5) Alpine.js y plugins (recomendado para Accordion y Autocomplete):
 
 ```
-npm install alpinejs @alpinejs/collapse
+npm install alpinejs @alpinejs/collapse @alpinejs/mask
 ```
 
 En `resources/js/app.js`:
@@ -51,8 +51,10 @@ En `resources/js/app.js`:
 ```
 import Alpine from 'alpinejs';
 import collapse from '@alpinejs/collapse';
+import mask from '@alpinejs/mask';
 
 Alpine.plugin(collapse);
+Alpine.plugin(mask);
 window.Alpine = Alpine;
 Alpine.start();
 ```
